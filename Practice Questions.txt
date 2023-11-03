@@ -1,0 +1,97 @@
+Dictionary
+___________
+
+1.Write a Python program to get a dictionary from an object's fields
+
+class dictObj(object):
+     def __init__(self):
+         self.x = 'red'
+         self.y = 'Yellow'
+         self.z = 'Green'
+     def do_nothing(self):
+         pass
+test = dictObj()
+print(test.__dict__)
+
+
+2.Write a Python program to print a dictionary in table format.
+
+my_dict = {'C1':[1,2,3],'C2':[5,6,7],'C3':[9,10,11]}
+for row in zip(*([key] + (value) for key, value in sorted(my_dict.items()))):
+    print(*row)
+
+3.Write a Python program to map two lists into a dictionary
+
+keys = ['red', 'green', 'blue']
+values = ['#FF0000','#008000', '#0000FF']
+color_dictionary = dict(zip(keys, values))
+print(color_dictionary)
+
+4.Write a Python program to get the maximum and minimum values of a dictionary.
+
+my_dict = {'x':500, 'y':5874, 'z': 560}
+
+key_max = max(my_dict.keys(), key=(lambda k: my_dict[k]))
+key_min = min(my_dict.keys(), key=(lambda k: my_dict[k]))
+
+print('Maximum Value: ',my_dict[key_max])
+print('Minimum Value: ',my_dict[key_min])
+
+5.Write a Python script to check whether a given key already exists in a dictionary.
+d = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+
+def is_key_present(x):
+  if x in d:
+      print('Key is present in the dictionary')
+  else:
+      print('Key is not present in the dictionary')
+is_key_present(5)
+is_key_present(9)
+
+
+
+Functions
+____________
+
+
+1.Write a Python function to multiply all the numbers in a list.
+Sample List : (8, 2, 3, -1, 7)
+Expected Output : -336
+def multiply(numbers):  
+    total = 1
+    for x in numbers:
+        total *= x  
+    return total  
+print(multiply((8, 2, 3, -1, 7)))
+
+
+2.Write a Python program to print the even numbers from a given list.
+Sample List : [1, 2, 3, 4, 5, 6, 7, 8, 9]
+Expected Result : [2, 4, 6, 8]
+def is_even_num(l):
+    enum = []
+    for n in l:
+        if n % 2 == 0:
+            enum.append(n)
+    return enum
+print(is_even_num([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+
+
+3.Write a Python program to access a function inside a function.
+def test(a):
+        def add(b):
+                nonlocal a
+                a += 1
+                return a+b
+        return add
+func= test(4)
+print(func(4))
+
+
+
+
+
+
+
+
+
